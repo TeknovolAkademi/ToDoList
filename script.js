@@ -34,11 +34,11 @@ window.addEventListener('load', () => {
 
         const task_done_el = document.createElement("button");
         task_done_el.classList.add("done");
-        task_done_el.innerHTML = "Done";
+        task_done_el.innerHTML = "<i class='fas fa-check-square'></i>";
 
         const task_delete_el = document.createElement("button");
         task_delete_el.classList.add("delete");
-        task_delete_el.innerHTML = "Delete";
+        task_delete_el.innerHTML = "<i class='fas fa-trash'></i>";
         
 
         task_actions_el.appendChild(task_done_el);
