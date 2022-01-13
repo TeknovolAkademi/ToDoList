@@ -87,7 +87,7 @@ input, button{
     transition: 0.4s;
 }
 #tasks .task .content .text:not(:read-only){
-    color: blue;
+    color: #8C0C66;
 }
 #tasks .task .actions{
     display: flex;
@@ -109,4 +109,7 @@ input, button{
 }
 .task .actions .delete{
     color: crimson;
+}
+.task .actions .done{
+    color: green;
 }
