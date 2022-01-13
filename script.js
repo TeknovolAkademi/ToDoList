@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
 
         const task_edit_el = document.createElement("button");
         task_edit_el.classList.add("edit");
-        task_edit_el.innerHTML = "Edit";
+        task_edit_el.innerHTML = "<i class='fas fa-edit'></i>";
 
         const task_delete_el = document.createElement("button");
         task_delete_el.classList.add("delete");
@@ -64,15 +64,16 @@ window.addEventListener('load', () => {
         })
 
         task_edit_el.addEventListener('click', () => {
+            console.log(task_edit_el.innerHTML);
             
-            if(task_edit_el.innerText.toLowerCase() == "edit"){
-                
+            if(task_edit_el.innerHTML ==='<i class="fas fa-edit"></i>'){   
                 task_input_el.removeAttribute("readonly");
                 task_input_el.focus();
-                task_edit_el.innerText = "Save";
+                task_edit_el.innerHTML = "<i class='fas fa-save'></i>";
+
             }else{
-                 task_input_el.setAttribute("readonly","readonly");
-                 task_edit_el.innerText = "Edit";
+                task_input_el.setAttribute("readonly","readonly");
+                task_edit_el.innerHTML = "<i class='fas fa-edit'></i>";
             }
                
         
