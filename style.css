@@ -113,3 +113,7 @@ input, button{
 .task .actions .done{
     color: green;
 }
+.dark-mode {
+    background-color: rgb(102, 101, 101);
+    color: white;
+  }
