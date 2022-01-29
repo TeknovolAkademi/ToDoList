@@ -13,4 +13,4 @@
 ##### Delete butonu ile çıktıyı tamamen kaldırıyoruz
 
 #       Projeme bu linkten ulaşabilirsiniz
-[ToDoList](https://alpayozer.github.io)
+[ToDoList](https://alpayozer.github.io/ToDoList)
