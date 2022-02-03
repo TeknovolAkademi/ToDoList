@@ -7,9 +7,114 @@
     <title>ToDo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        filter:alpha(opacity=70);
+        -moz-opacity:0.7;
+        -khtml-opacity: 0.7;
+        opacity: 0.7;
+        z-index: 100;
+        display: none;
+        }
+        .cnt223 a{
+        text-decoration: none;
+        }
+        .popup{
+        width: 100%;
+        margin: 0 auto;
+        display: none;
+        position: fixed;
+        z-index: 101;
+        }
+        .cnt223{
+        min-width: 600px;
+        width: 600px;
+        min-height: 150px;
+        margin: 300px auto;
+        background: #f3f3f3;
+        position: relative;
+        z-index: 103;
+        padding: 15px 35px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #000;
+        text-align: center;
+        }
+        .cnt223 p{
+            margin-top: 5%;
+        clear: both;
+            color: #555555;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        .cnt223 p a{
+        color: #d91900;
+        font-weight: bold;
+        }
+        .cnt223 .x{
+        float: right;
+        height: 35px;
+        left: 22px;
+        position: relative;
+        top: -25px;
+        width: 34px;
+        }
+        .cnt223 .x:hover{
+        cursor: pointer;
+        }
+        .time-frame {
+		background-color: #dd886f;
+		color: #fff;
+		width: auto;
+		min-width: 160px;
+		font-family: Arial;
+		margin:0 0 0 auto;
+		display:table;
+		padding:10px 10px;
+        
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+
+	.time-frame > div {
+		width: 100%;
+		text-align: center;
+	}
+
+	#tarih-bolumu {
+		font-size: 18px;
+		color:#a9fff7;
+	}
+	#saat-bolumu {
+		font-size: 32px;
+		line-height: 30px;
+		margin-top:5px;
+	}
+        </style>
 </head>
 <body>
-
+    <div class='time-frame'>
+        <div id='tarih-bolumu'></div>
+        <div id='saat-bolumu'></div>
+    </div>
+        <div class='popup'>
+        <div class='cnt223'>
+        <h1>TODOLİST'E HOŞGELDİNİZ</h1>
+        <p>
+        Planlamaya Hazırsanız Hadi Başlayalım
+        <br/>
+        <br/>
+        <a href='' class='close'>Devam</a>
+        </p>
+        </div>
+        </div>
+        
         <div class="header">
             <h1><strong>~ToDoList 2022~</strong></h1>
             <form id="new-task-form">
@@ -20,6 +125,7 @@
         </div>
         <button onclick="myFunction()"><i class="fas fa-lightbulb"></i></button>
         <div class="main">
+            
             <h2>ToDo</h2>
             
             
@@ -42,6 +148,42 @@
                
             </div>
         </div>
+        
+        
+        
+        
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+        <script type='text/javascript'>
+            $(function(){
+            var overlay = $('<div id="overlay"></div>');
+            overlay.show();
+            overlay.appendTo(document.body);
+            $('.popup').show();
+            $('.close').click(function(){
+            $('.popup').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+            });
+             
+            $('.x').click(function(){
+            $('.popup').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+            });
+            });
+            $(window).load(function(){
+		$(document).ready(function() {
+			var interval = setInterval(function() {
+				var momentNow = moment();
+				$('#tarih-bolumu').html(momentNow.format('DD.MM.YYYY'));
+				$('#saat-bolumu').html(momentNow.format('hh:mm:ss'));
+			}, 100);
+		});
+	});
+        </script>
 
         <script src="script.js"></script>
 </body>
