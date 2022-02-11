@@ -42,6 +42,10 @@ input, button{
     font-size: 1.25rem;
 }
 #new-task-submit{
+        padding-left: 15px;
+        padding-right:15px;
+        border-radius: 8px;
+        background-color: #DD886F;
         color: #235645;
         font-size: 1.25rem;
         font-weight: 700;
